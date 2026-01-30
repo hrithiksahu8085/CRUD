@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block 'content' %}
+
+<div class="main-div">
+    <form method="POST" enctype="multipart/form-data">
+        
+        {% csrf_token %}
+
+        <h1>Add User </h1>
+
+        <div class="Div">
+        <label>Enter Your Name</label>
+        <input type="text" name="fullName" placeholder="enter your name"/>
+        </div>
+
+        
+        <div class="Div">
+        <label>Enter Your email</label>
+        <input type="text" name="email" placeholder="enter your email"/>
+        </div>
+
+        
+        <div class="Div">
+        <label>Enter Your Mobile no</label>
+        <input type="text" name="mobile" placeholder="enter your mobile no"/>
+        </div>
+
+       
+        <div class="Div">
+        <label>Enter Your Age</label>
+        <input type="text" name="age" placeholder="enter your age"/>
+        </div>
+
+
+        <div class="Div">
+            <label>Upload an Image</label>
+            <input type="file" name="image" />
+        </div>
+
+
+
+
+        
+        <div class="Div">
+        <label>Enter Your course</label>
+        <select name="course" id="">
+            <option value="python developer">Python developer</option>
+            <option value="python developer">java developer</option>
+            <option value="python developer">react developer</option>
+
+
+        </select>
+        </div>
+
+        <input type="submit">
+
+
+
+
+    </form>
+1
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+  <div class="table-div">
+
+    <table class="table">
+      <tr>
+        <th>User Profile</th>
+        <th>User Name</th>
+        <th>User Age</th>
+        <th>User Course</th>
+        <th>User Email</th>
+        <th>User Mobile</th>
+        <th>Action</th>
+      </tr>
+
+
+      {% for x in userDetail  %}
+
+        <tr>
+        <td>
+        <img src="{{x.images.url}}" class="img">
+        </td>
+        <td>{{x.name}}</td>
+        <td>{{x.age}}</td>
+        <td>{{x.course}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.mobile}}</td>
+        <td>
+          <a href={% url 'deleteuser' x.id %}> 
+            <button class='delete'>Delete</button>
+          </a>
+
+          <a href={% url 'updateUser' x.id %}> 
+            <button class='delete'>Update</button>
+          </a>
+          
+          
+        </td>
+        
+      </tr>
+        
+      {% endfor %}
+    
+
+      
+    </table>
+  </div>
+{% endblock  %}
+
+
+
+
+

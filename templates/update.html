@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block 'content' %}
+  <div class="main-div">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1>Update User</h1>
+
+        <div class="Div">
+            <label>Enter Your Name</label>
+            <input type="text" name="fullName" value={{user.name}} placeholder="enter your name"/>
+        </div>
+
+        <div class="Div">
+            <label>Enter Your Email</label>
+            <input type="email" name="email" value={{user.email}} placeholder="enter your email"/>
+        </div>
+
+        <div class="Div">
+            <label>Enter Your Mobile</label>
+            <input type="text" name="mobile" value={{user.mobile}} placeholder="enter your mobile number"/>
+        </div>
+
+        <div class="Div">
+            <label>Enter Your Age</label>
+            <input type="text" name="age"  value={{user.age}} placeholder="enter your age"/>
+        </div>
+
+         <div class="Div">
+            <label>Upload an Image</label>
+            <input type="file" name="image" />
+        </div>
+
+         <div class="Div">
+            <label>Choose Course</label>
+            <select name="course" id="">
+                <option value="python developer">Python Developer</option>
+                <option value="java developer">Java Developer</option>
+                <option value="react developer">React Developer</option>
+            </select>
+        </div>
+       
+        <input type="submit">
+
+    </form>
+  </div>
+{% endblock  %}
+
